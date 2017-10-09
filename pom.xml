@@ -12,6 +12,8 @@
 		<module>eureka-consumer</module>
 		<module>eureka-consumer-ribbon</module>
 		<module>eureka-consumer-feign</module>
+		<module>eureka-config-server</module>
+		<module>eureka-config-client</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -35,6 +37,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<!--google的依赖，包含大量JAVA常用工具类-->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>18.0</version>
 		</dependency>
 	</dependencies>
 
