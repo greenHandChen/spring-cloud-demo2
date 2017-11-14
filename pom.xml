@@ -14,6 +14,9 @@
 		<module>eureka-consumer-feign</module>
 		<module>eureka-config-server</module>
 		<module>eureka-config-client</module>
+		<module>eureka-monitor</module>
+		<module>eureka-turbine</module>
+		<module>eureka-api-gateway</module>
 	</modules>
 	<packaging>pom</packaging>
 

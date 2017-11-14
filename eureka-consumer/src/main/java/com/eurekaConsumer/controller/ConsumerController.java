@@ -16,9 +16,10 @@ public class ConsumerController {
     LoadBalancerClient loadBalancerClient;
     @Autowired
     RestTemplate restTemplate;
+
     @RequestMapping("/consumer")
-    public String consumer(){
+    public String consumer(String name) {
         ServiceInstance serviceInstance = loadBalancerClient.choose("eureka-client");
-        return restTemplate.getForObject("http://"+serviceInstance.getHost()+":"+serviceInstance.getPort()+"/test",String.class);
+        return restTemplate.getForObject("http://" + serviceInstance.getHost() + ":" + serviceInstance.getPort() + "/test?name=" + name, String.class);
     }
 }

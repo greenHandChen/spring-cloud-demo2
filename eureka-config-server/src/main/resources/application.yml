@@ -5,11 +5,11 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/greenHandChen/spring-cloud-demo2.git # git仓库地址
-          search-paths:  eureka-config-repo # 存放配置文件的文件夹
+          uri: https://github.com/greenHandChen/spring-cloud-demo2.git # git浠撳簱鍦板潃
+          search-paths:  eureka-config-repo # 瀛樻斁閰嶇疆鏂囦欢鐨勬枃浠跺す
   jackson:
       serialization:
-        indent-output: true #美化JSON格式数据
+        indent-output: true #缇庡寲JSON鏍煎紡鏁版嵁
 server:
   port: 1201
 
