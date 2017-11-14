@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: api-gateway
+
+server:
+  port: 1101
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# 路由设置: 当请求路径符合path规则时，将会被路由到对应的service上。
+zuul:
+  routes:
+    eureka-client:
+      path: /eureka-client/**
+      serviceId: eureka-client
+    eureka-consumer:
+      path: /eureka-consumer/**
+      serviceId: eureka-consumer
+    eureka-consumer-ribbon:
+      path: /eureka-consumer-ribbon/**
+      serviceId: eureka-consumer-ribbon
+    eureka-consumer-feign:
+      path: /eureka-consumer-feign/**
+      serviceId: eureka-consumer-feign

@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: turbine
+
+server:
+  port: 8989
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+turbine:
+  app-config: eureka-consumer-feign,eureka-consumer-ribbon # 监控的服务
+  cluster-name-expression: new String("default")
+  # 2. 当cluster-name-expression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default
+  # 3. 当cluster-name-expression: metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，
+  # 则需要配置，同时turbine.aggregator.clusterConfig: ABC
+  combine-host-port: true # 开启在一台主机上通过IP+端口号来区分服务
+
+
+
+
