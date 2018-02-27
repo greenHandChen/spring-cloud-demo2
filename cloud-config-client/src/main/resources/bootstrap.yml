@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:1201/ # 配置中心地址
+      profile: default # 配置文件的profile {application}-{profile} -> config-client(默认default)
+      label: master # 分支
+server:
+  port: 2001

@@ -7,16 +7,16 @@
 	<artifactId>spring-cloud-demo2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>eureka-server</module>
-		<module>eureka-client</module>
-		<module>eureka-consumer</module>
-		<module>eureka-consumer-ribbon</module>
-		<module>eureka-consumer-feign</module>
-		<module>eureka-config-server</module>
-		<module>eureka-config-client</module>
-		<module>eureka-monitor</module>
-		<module>eureka-turbine</module>
-		<module>eureka-api-gateway</module>
+		<module>cloud-eureka-server</module>
+		<module>cloud-client</module>
+		<module>cloud-consumer</module>
+		<module>cloud-consumer-ribbon</module>
+		<module>cloud-consumer-feign</module>
+		<module>cloud-config-server</module>
+		<module>cloud-config-client</module>
+		<module>cloud-monitor</module>
+		<module>cloud-turbine</module>
+		<module>cloud-api-gateway</module>
 	</modules>
 	<packaging>pom</packaging>
 
