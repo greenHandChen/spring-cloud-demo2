@@ -2,4 +2,4 @@ info:
   profile: default
   from: git1
 
-test: '动态刷新测试第N+5次'
+test: '动态刷新测试第N+6次'
