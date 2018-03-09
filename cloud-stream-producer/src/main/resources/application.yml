@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: cloud-stream-producer
+  rabbitmq:
+    port: 5672
+    host: 192.168.31.128
+    username: root
+    password: root
+  cloud:
+    stream:
+      bindings:
+        myOutput: # 输出通道名称
+          destination: hello-C # 针对于输出来说，将会修改之前声明的交换机名称与消息的routing key
+server:
+  port: 2003
+eureka:
+  client:
+    service-url:
+      defaulZone: http://localhost:8761/eureka
+management:
+  security:
+    enabled: false

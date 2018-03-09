@@ -10,6 +10,8 @@
 		<module>cloud-eureka-server</module>
 		<module>cloud-client</module>
 		<module>cloud-consumer</module>
+		<module>cloud-stream-producer</module>
+		<module>cloud-stream-receiver</module>
 		<module>cloud-consumer-ribbon</module>
 		<module>cloud-consumer-feign</module>
 		<module>cloud-config-server</module>

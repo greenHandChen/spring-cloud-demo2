@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: cloud-stream-receiver
+  rabbitmq:
+    port: 5672
+    host: 192.168.31.128
+    username: root
+    password: root
+  cloud:
+    stream:
+      bindings:
+         myInput: # 输入通道名称
+          destination: hello-C # 针对于输入通道来说，将修改交换机，绑定规则与队列名称。
+          group: group-A # 指定消费组:基于 发布-订阅 模式 可以很轻易的拓展出多个消费者。
+                         # 在实际的生产中，我们一般都会做负载均衡和高可用的策略,
+                         # 但是又不希望一个消息被同一应用的多个实例重复消费，这时就引入了消费组的概念。
+                         # 在默认的情况下，springcloudstream将会为所有的实例分配一个独立的消费组，因此当订阅同一队列时，所有的消费者都能对消息进行消费
+                         # 当我们基于cloud-stream-receiver应用启动两个实例时，将会看到只有一个实例将会去消费消息
+server:
+  port: 2005
+eureka:
+  client:
+    service-url:
+      defaulZone: http://localhost:8761/eureka
+management:
+  security:
+    enabled: false
