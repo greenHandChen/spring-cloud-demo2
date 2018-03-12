@@ -10,7 +10,10 @@ spring:
     stream:
       bindings:
         myOutput: # 输出通道名称
-          destination: hello-C # 针对于输出来说，将会修改之前声明的交换机名称与消息的routing key
+          destination: hello-C # 针对输出通道来说，如果定义了destination,那么交换机以及消息的routing key名称将都为这个名称。
+          producer:
+            partitionKeyExpression: payload # el表达式的分区KEY
+            partitionCount: 2
 server:
   port: 2003
 eureka:

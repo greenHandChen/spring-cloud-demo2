@@ -8,12 +8,16 @@ spring:
     password: root
   cloud:
     stream:
+      instanceCount: 2 # 总实例数
+      instanceIndex: 0 # 当前实例的索引，当要启动项目时，注意修改每个实例的索，最大数为总实例数-1
       bindings:
          myInput: # 输入通道名称
-          destination: hello-C # 针对于输入通道来说，将修改交换机，绑定规则与队列名称。
+          consumer:
+            partitioned: true # 开启消息分区
+          destination: hello-C # 针对输入通道来说，如果指定了destination,那么exchange，binding规则，队列名称将都以指定的名称开头，并且可以监听多个destination(若指定了destination与group则队列名称最终为destination.group)。
           group: group-A # 指定消费组:基于 发布-订阅 模式 可以很轻易的拓展出多个消费者。
                          # 在实际的生产中，我们一般都会做负载均衡和高可用的策略,
-                         # 但是又不希望一个消息被同一应用的多个实例重复消费，这时就引入了消费组的概念。
+                           # 但是又不希望一个消息被同一应用的多个实例重复消费，这时就引入了消费组的概念。
                          # 在默认的情况下，springcloudstream将会为所有的实例分配一个独立的消费组，因此当订阅同一队列时，所有的消费者都能对消息进行消费
                          # 当我们基于cloud-stream-receiver应用启动两个实例时，将会看到只有一个实例将会去消费消息
 server:
