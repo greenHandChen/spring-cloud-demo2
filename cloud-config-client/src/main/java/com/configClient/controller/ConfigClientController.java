@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * Created by enHui.Chen on 2017/10/9 0009.
- */
+         */
 // 配置信息的动态刷新
 @RefreshScope
 @RestController

@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: cloud-zipkin
+server:
+  port: 9411 # 在服务端将端口设置为9411，客户端则不需要再设置zipkin端口号，因为客户端连接zipkin服务器时，默认的端口就是9411
+

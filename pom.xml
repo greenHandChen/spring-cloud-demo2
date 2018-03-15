@@ -19,6 +19,8 @@
 		<module>cloud-monitor</module>
 		<module>cloud-turbine</module>
 		<module>cloud-api-gateway</module>
+		<module>cloud-sleuth-1</module>
+		<module>cloud-sleuth-2</module>
 	</modules>
 	<packaging>pom</packaging>
 

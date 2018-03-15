@@ -1,0 +1,28 @@
+server:
+  port: 2007
+
+spring:
+  application:
+    name: cloud-sleuth-2
+  # 使用zipkin的http方式收集
+  # zipkin:
+  #  base-url: http://localhost:9411/ # zipkin的服务器地址
+  # 使用rabbitmq消息中间件进行收集跟踪信息
+  rabbitmq:
+    username: root
+    password: root
+    port: 5672
+    host: 192.168.31.128
+  sleuth:
+    sampler:
+      percentage: 1.0 # 抽样率 1：百分百
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  security:
+    enabled: false
+

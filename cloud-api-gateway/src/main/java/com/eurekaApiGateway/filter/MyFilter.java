@@ -54,12 +54,12 @@ public class MyFilter extends ZuulFilter{
         RequestContext requestContext = RequestContext.getCurrentContext();
         HttpServletRequest httpServletRequest = requestContext.getRequest();
         logger.info("send {} request to {}",httpServletRequest.getMethod(),httpServletRequest.getRequestURL().toString());
-        String token = httpServletRequest.getParameter("token");
+        String token = httpServletRequest.getHeader("token");
         if(!"ceh".equals(token)){
             logger.warn("token is fucked");
             requestContext.setSendZuulResponse(false);// 设置该请求不进行路由
-            requestContext.setResponseStatusCode(401);// 设置返回的错误代码
-            requestContext.setResponseBody("it's a illegal request");
+            requestContext.setResponseStatusCode(403);// 设置返回的错误代码
+            requestContext.setResponseBody("forbidden:权限不足");
             return null;
         }
         logger.info("token is ok");

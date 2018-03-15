@@ -25,3 +25,6 @@ zuul:
     eureka-consumer-feign:
       path: /eureka-consumer-feign/**
       serviceId: eureka-consumer-feign
+    cloud-sleuth-1:
+      path: /cloud-sleuth-1/**
+      serviceId: cloud-sleuth-1
