@@ -17,7 +17,7 @@ public class ConfigClientController {
     private String test;
 
     @RequestMapping("/testClient")
-    public String test(@RequestParam(name = "request") String request) {
-        return test + request;
+    public String test(String request) {
+        return test;
     }
 }

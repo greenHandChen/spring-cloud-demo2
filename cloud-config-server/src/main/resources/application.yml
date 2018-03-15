@@ -6,7 +6,6 @@ spring:
           # 动态刷新需要配置帐号
           username: 214697163@qq.com
           password: qq172513
-
           uri: https://github.com/greenHandChen/spring-cloud-demo2.git # git仓库地址
           search-paths:  cloud-config-repo # 存放配置文件的文件夹
   rabbitmq:
